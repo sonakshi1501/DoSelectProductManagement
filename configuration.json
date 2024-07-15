@@ -1,0 +1,39 @@
+{
+    "version": "1.0",
+    "default_open_files": [
+      "src/App.vue",
+      "src/views/Products.vue",
+      "src/views/ProductDetail.vue",
+      "src/store/index.js"
+      ],
+    "read_only_files": [
+      "tests/App.test.js", 
+      ".gitignore", 
+      "configuration.json"
+      ],
+    "buttons": {
+      "Install Packages": {
+        "command": "npm install"
+      },
+      "Start Dev Server": {
+        "command": "npm start"
+      },
+      "Start API Server":{
+        "command": "npm run server"
+      },
+      "Run Test Cases": {
+        "command": "npm test -- --watchAll=false"
+      }
+    },
+    "scoring": {
+      "command": "npm install && npm run test -- --testResultsProcessor=\"jest-junit\" --watchAll=false",
+      "files": {
+        "junit.xml": "Vue"
+      }
+    },
+    "post_start": {
+      "commands": ["npm install && npm run server"]
+    },
+    "preview_port": 3000
+  }
+  

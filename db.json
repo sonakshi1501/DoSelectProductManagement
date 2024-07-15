@@ -1,0 +1,12 @@
+{
+    "dummyData": [
+        {
+            "id": 1,
+            "data": "I ♥️ Vue"
+        },
+        {
+            "id":2,
+            "data": "Vue is a JavaScript framework for building user interfaces."
+        }
+    ]
+}
