@@ -15,26 +15,20 @@ This project is a Product Management Application built with Vue.js, Vue Router f
 - Click on a product card to navigate to the product detail page.
 - The product detail page will display detailed information about the selected product
 
-### [App](src/App.vue)
-- Use router-link components in your template to navigate between different routes.
 
 ## API Integration
-The application uses the dummyjson.com API to fetch product data.
+The application uses the db.json API to fetch product data.
 
-- Get Products: https://dummyjson.com/products
-- Get Product Details: https://dummyjson.com/products/{id}
+- Get Products: http://localhost:8001/products
+- Get Product Details: http://localhost:8001/products/{id}
 
 ## Instructions
-
-### App 
-- The 'to' prop in router-link specifies the target route path. For example, to="/" navigates to the home route, and to="/products" navigates to the products route defined in your Vue Router configuration.
 
 ### Product Page
 - The product card will include an image with the class name 'card-img-top'.
 - The title of the product will be displayed using the class 'card-title'.
 - The description and price of the product will be shown in the card using the class 'card-text'.
-- Each card will feature a 'View Details' button, styled with 'btn btn-primary', which allows users to view specific details of the 
-  product. Clicking this button will open the product detail page with the corresponding product ID.
+- Each card will feature a 'View Details' button, styled with 'btn btn-primary', allowing users to view specific product details. This button will open the product detail page with the corresponding product ID.
 
 ### Product Detail Page
 - An image represents the product with the class name 'card-img-top'.
@@ -46,13 +40,13 @@ The application uses the dummyjson.com API to fetch product data.
 ### store/index.js
 - Ensure the Vuex state object contains a products array initially set to empty. This array will hold the fetched products from the API.
 - Define a mutation named 'setProducts' to update the product's state with the fetched data.
-- Implement an action named 'fetchProducts' that uses Axios to fetch products from the API endpoint (https://dummyjson.com/products).
+- Implement an action named 'fetchProducts' that uses Axios to fetch products from the API endpoint (http://localhost:8001/products).
 - Upon successful response, commit the 'setProducts' mutation to update the state with the fetched products.
 - Handle any errors that may occur during the API call.
 
 ## Expected Live Preview
 
-![Live Preview (Placeholder)](https://media-doselect.s3.amazonaws.com/generic/nY05xxg2z2dEAbrOjZOXAEQed/management.gif)
+![Live Preview (Placeholder)](https://media-doselect.s3.amazonaws.com/generic/OGn9RyBLnrQ8nPZ0n1AY9gy3/productManagement.gif)
 
 ## Commands
 
@@ -75,6 +69,13 @@ This command will start the dev server. You can view the **Live Preview** once t
 - Click the `Preview in Editor` option that pops up at the bottom-right corner
 - Click the Open `Preview` option in the `Run` menu
 
+### Start API Server:
+
+```bash
+npm run server
+```
+
+This command will start the api server. The server would start automatically once the packages are installed. However, if it is stopped, you may need to start it manually by running this command.
 
 ### Run Test Cases:
 

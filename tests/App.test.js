@@ -39,7 +39,7 @@ describe("Product Management Application", () => {
     });
 
     mock = new MockAdapter(axios);
-    mock.onGet("https://dummyjson.com/products").reply(200, {
+    mock.onGet("http://localhost:8001/products").reply(200, {
       products: [
         {
           id: 1,
@@ -57,7 +57,7 @@ describe("Product Management Application", () => {
         },
       ],
     });
-    mock.onGet("https://dummyjson.com/products/1").reply(200, {
+    mock.onGet("http://localhost:8001/products/1").reply(200, {
       id: 1,
       title: "Product 1",
       description: "Description 1",

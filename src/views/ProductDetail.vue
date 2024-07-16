@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <button onclick="history.back()">Back </button>
     <div class="card mt-4">
       <img :src="product.thumbnail" class="card-img-top" alt="Product Image">
       <div class="card-body">
@@ -23,7 +24,7 @@ export default {
   },
   created() {
     const productId = this.$route.params.id;
-    axios.get(`https://dummyjson.com/products/${productId}`)
+    axios.get(`http://localhost:8001/products/${productId}`)
       .then(response => {
         this.product = response.data;
       })
@@ -37,5 +38,17 @@ export default {
 <style scoped>
 h1 {
   color: #42b983;
+}
+.card {
+  width: 100%; /* Full width of the parent container */
+  max-width: 600px; /* Maximum width for the card, adjust as needed */
+  margin: auto; /* Center the card horizontally */
+}
+
+.card-img-top {
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Contain within the container without cropping */
+  max-height: 300px; /* Maximum height, adjust as needed */
 }
 </style>

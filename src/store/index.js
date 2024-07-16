@@ -12,9 +12,9 @@ export default createStore({
   },
   actions: {
     fetchProducts({ commit }) {
-      axios.get('https://dummyjson.com/products')
+      axios.get('http://localhost:8001/products')
         .then(response => {
-          commit('setProducts', response.data.products);
+          commit('setProducts', response.data);
         })
         .catch(error => {
           console.error(error);
