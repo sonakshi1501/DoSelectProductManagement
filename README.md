@@ -19,28 +19,27 @@ This project is a Product Management Application built with Vue.js, Vue Router f
 ## API Integration
 The application uses the db.json API to fetch product data.
 
-- Get Products: http://localhost:8001/products
-- Get Product Details: http://localhost:8001/products/{id}
+- Get Products: `${APIURL}products`
+- Get Product Details: `${APIURL}products/${id}`
 
 ## Instructions
 
 ### Product Page
 - The product card will include an image with the class name 'card-img-top'.
 - The title of the product will be displayed using the class 'card-title'.
-- The description and price of the product will be shown in the card using the class 'card-text'.
+- The description and price of the product will be shown on the card using the class 'card-text'.
 - Each card will feature a 'View Details' button, styled with 'btn btn-primary', allowing users to view specific product details. This button will open the product detail page with the corresponding product ID.
 
 ### Product Detail Page
 - An image represents the product with the class name 'card-img-top'.
 - The title of the product, styled with 'card-title'.
 - Detailed description and price information using the class 'card-text'.
-- The page will make an API call to fetch detailed information about the product based on its ID. This data will be used dynamically in 
-  the template to populate the product detail page.
+- The page will make GET request to an API call(`${APIURL}products/${id}`) to fetch detailed information about the product based on its ID. This data will be used dynamically in the template to populate the product detail page.
 
 ### store/index.js
 - Ensure the Vuex state object contains a products array initially set to empty. This array will hold the fetched products from the API.
 - Define a mutation named 'setProducts' to update the product's state with the fetched data.
-- Implement an action named 'fetchProducts' that uses Axios to fetch products from the API endpoint (http://localhost:8001/products).
+- Implement an action named 'fetchProducts' that uses Axios to fetch products from the API endpoint using a GET request to `{apiUrl}products`.
 - Upon successful response, commit the 'setProducts' mutation to update the state with the fetched products.
 - Handle any errors that may occur during the API call.
 

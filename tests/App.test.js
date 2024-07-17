@@ -5,6 +5,7 @@ import { createStore } from "vuex";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import flushPromises from "flush-promises";
+import { APIURL } from '../API_URL';
 
 describe("Product Management Application", () => {
   let actions;
@@ -39,7 +40,7 @@ describe("Product Management Application", () => {
     });
 
     mock = new MockAdapter(axios);
-    mock.onGet("http://localhost:8001/products").reply(200, {
+    mock.onGet(`${APIURL}products`).reply(200, {
       products: [
         {
           id: 1,
@@ -57,7 +58,7 @@ describe("Product Management Application", () => {
         },
       ],
     });
-    mock.onGet("http://localhost:8001/products/1").reply(200, {
+    mock.onGet(`${APIURL}products/1`).reply(200, {
       id: 1,
       title: "Product 1",
       description: "Description 1",

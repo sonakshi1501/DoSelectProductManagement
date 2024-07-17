@@ -14,6 +14,7 @@
 
 <script>
 import axios from 'axios';
+import { APIURL } from '../../API_URL'; // Adjust the import path as necessary
 
 export default {
   name: 'ProductDetail',
@@ -24,7 +25,7 @@ export default {
   },
   created() {
     const productId = this.$route.params.id;
-    axios.get(`http://localhost:8001/products/${productId}`)
+    axios.get(`${APIURL}products/${productId}`)
       .then(response => {
         this.product = response.data;
       })

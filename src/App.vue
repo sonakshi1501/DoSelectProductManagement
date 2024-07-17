@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h2 style="text-align: center;">Product Management Application</h2>
     <nav>
       <router-link to="/products">Products</router-link>
     </nav>

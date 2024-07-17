@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
+import { APIURL } from '../../API_URL'; // Adjust the import path as necessary
 
 export default createStore({
   state: {
@@ -12,7 +13,7 @@ export default createStore({
   },
   actions: {
     fetchProducts({ commit }) {
-      axios.get('http://localhost:8001/products')
+      axios.get(`${APIURL}products`)
         .then(response => {
           commit('setProducts', response.data);
         })
