@@ -15,4 +15,8 @@ module.exports = {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$":
       "<rootDir>/__mocks__/fileMock.js",
   },
+  globals: {
+    // define all globals for test here
+    PROXY_URI: null,
+  },
 };
